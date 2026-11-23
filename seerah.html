@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seerah Journey App · Case study · Farha Sajid</title>
+<meta name="description" content="How I designed an illustrated, landscape journey that makes learning the Seerah feel like an adventure.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5EDE2">
+<!-- share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farha Sajid">
+<meta property="og:url" content="https://fasajid.github.io/farhasajid/seerah.html">
+<meta property="og:title" content="Seerah Journey App · Case study · Farha Sajid">
+<meta property="og:description" content="How I designed an illustrated, landscape journey that makes learning the Seerah feel like an adventure.">
+<meta property="og:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Farha Sajid, UX/UI designer and web developer: an illustrated henna desk with a sketchbook, sticky notes and an Atlanta skyline in henna">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seerah Journey App · Case study · Farha Sajid">
+<meta name="twitter:description" content="How I designed an illustrated, landscape journey that makes learning the Seerah feel like an adventure.">
+<meta name="twitter:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<!-- /share preview -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+/* Same theme as index.html. Change colors in both files. */
+:root{
+  --cream:#F5EDE2;--paper:#EBDFCC;--ink:#24170F;--ink-soft:#5C4433;--black:#140E0A;
+  --maroon:#4A2C17;--orange:#9A5E28;--gold:#B9893F;--teal:#8A4F22;
+  --sky:#EBDFCC;--hill1:#E2CFB4;--hill2:#CDB08A;--hill3:#A98457;
+  --stain:#9A5E28;--scale:1;--radius:22px;
+  --serif:"Fraunces",Georgia,serif;--sans:"Montserrat",system-ui,sans-serif;
+}
+*{box-sizing:border-box;min-width:0}
+html{font-size:calc(112.5% * var(--scale));scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:clip}
+a{color:var(--maroon);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0 0 .6em;color:var(--maroon);text-wrap:balance;font-weight:400;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-weight:400}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:66ch}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.narrow{max-width:760px}
+section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+.eyebrow{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;color:var(--teal);display:block;margin-bottom:.7rem}
+.accent{color:var(--stain);font-style:italic}
+.skip{position:absolute;left:-999px;top:0;background:var(--maroon);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* ✎ fill-in prompts: replace each one with your real content */
+.prompt{border:2px dashed rgba(107,45,31,.35);border-radius:14px;padding:1rem 1.2rem;background:rgba(255,255,255,.55);color:var(--ink-soft);font-style:italic;margin:0 0 1.2rem;max-width:66ch}
+.prompt::before{content:"✎ Write: ";font-style:normal;font-weight:700;color:var(--maroon)}
+.prompt-note{background:var(--gold);color:var(--black);font-weight:700;text-align:center;padding:.55rem 1rem;font-size:.9rem}
+
+/* header */
+.site-header{border-bottom:0;background:transparent}
+.header-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.8rem 0}
+.site-nav{position:relative;display:flex;align-items:center;gap:.1rem;margin-left:auto;padding:.28rem;background:rgba(235,223,204,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(74,44,23,.1);border-radius:999px;box-shadow:0 8px 24px -16px rgba(74,44,23,.35)}
+.site-nav a{position:relative;z-index:1;text-decoration:none;color:var(--ink);font-size:.84rem;letter-spacing:.02em;padding:.42rem .85rem;border-radius:999px;transition:color .3s,background .3s;white-space:nowrap}
+.site-nav a:hover,.site-nav a.active{color:var(--deep,var(--maroon))}
+.nav-chip{position:absolute;z-index:0;top:.28rem;bottom:.28rem;left:0;width:0;border-radius:999px;background:var(--offwhite,var(--cream));box-shadow:0 3px 10px -5px rgba(74,44,23,.4);opacity:0;
+  transition:left .45s cubic-bezier(.3,1.25,.4,1),width .45s cubic-bezier(.3,1.25,.4,1),opacity .3s}
+.nav-chip::after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--gold)}
+.site-nav a.cta{background:var(--deep,var(--maroon));color:var(--offwhite,var(--cream));margin-left:.3rem;padding:.42rem 1rem}
+.site-nav a.cta:hover{background:var(--black,#140E0A)}
+.tools{display:flex;gap:.3rem} /* fallback only: ui.js moves these into the Aa options under the header */
+.tools button{font:inherit;font-size:.78rem;background:transparent;color:var(--ink-soft);border:1px solid rgba(74,44,23,.22);border-radius:999px;padding:.3rem .7rem;cursor:pointer;min-height:34px}
+@media (max-width:860px){
+  .site-header{position:relative}
+  .header-inner{gap:.9rem}
+  .site-nav{order:3;width:100%;margin-left:0;margin-right:0;justify-content:space-between}
+  .site-nav{overflow-x:auto;scrollbar-width:none}
+  .site-nav a{padding:.5rem .65rem;font-size:.85rem}
+  .site-nav a.cta{padding:.5rem .9rem}
+}
+
+/* sticky chapter bar */
+.chapters{position:sticky;top:0;z-index:40;background:rgba(245,237,226,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(107,45,31,.12)}
+.chapters .wrap{display:flex;gap:.4rem 1.2rem;align-items:center;flex-wrap:wrap;padding:.6rem 0}
+.chapters a{text-decoration:none;font-weight:700;color:var(--ink-soft);padding:.35rem .2rem;border-bottom:3px solid transparent;font-size:.95rem}
+.chapters a.active{color:var(--maroon);border-color:var(--stain)}
+.chapters .back{margin-right:auto;color:var(--maroon)}
+@media (max-width:640px){
+  .chapters .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:1rem}
+  .chapters a{white-space:nowrap;flex:none;font-size:.88rem}
+  .chapters .back{margin-right:0}
+}
+#progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--stain)}
+
+
+/* henna lines */
+.henna path,.henna circle.line{fill:none;stroke:var(--stain);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s ease}
+.is-drawn .draw{stroke-dashoffset:0}
+.stop-dot{fill:var(--stain);opacity:0;transition:opacity .6s ease}
+.is-drawn .stop-dot{opacity:1}
+
+/* hero */
+.hero{padding-top:clamp(2rem,5vw,4rem)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.status{display:inline-flex;gap:.45rem;align-items:center;background:#fff;border:1px solid rgba(107,45,31,.2);padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:1rem}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--gold);display:inline-block}
+.lede{font-size:1.2rem;color:var(--ink-soft)}
+.scene{border-radius:var(--radius);overflow:hidden;background:var(--sky);aspect-ratio:3/2}
+.scene svg{width:100%;height:100%;display:block}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2.5rem;padding:1.4rem 0;border-top:1px solid rgba(107,45,31,.18);border-bottom:1px solid rgba(107,45,31,.18)}
+.meta dt{font-weight:700;color:var(--teal);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.meta dd{margin:.2rem 0 0}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}}
+
+/* TL;DR */
+.tldr{background:#fff;border-radius:var(--radius);padding:clamp(1.4rem,3vw,2.2rem);border:1px solid rgba(107,45,31,.12);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
+.tldr h3{font-size:1.05rem;margin-bottom:.3rem}
+.tldr p{font-size:.95rem;margin:0}
+@media (max-width:860px){.tldr{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tldr{grid-template-columns:1fr}}
+
+/* chapter title cards */
+.chapter-card{background:var(--maroon);color:var(--cream);text-align:center;padding:clamp(5rem,12vw,8.5rem) 0}
+.chapter-card .eyebrow{color:var(--gold)}
+.chapter-card h2{color:var(--cream);font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:.3rem}
+.chapter-card p{margin:0 auto;color:#F3E3D2;font-size:1.1rem}
+.chapter-card svg{width:90px;height:90px;margin-bottom:1rem}
+.chapter-card .henna path{stroke:var(--gold)}
+
+/* blocks */
+.block{margin-top:4.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin-top:1.2rem}
+.card{background:#fff;border-radius:18px;padding:1.4rem;border:1px solid rgba(107,45,31,.12)}
+.card .prompt{margin:0;font-size:.95rem}
+.card h3{font-size:1.1rem}
+.insight{border-top:5px solid var(--stain)}
+.insight .num{font-family:var(--serif);font-size:2rem;color:var(--stain);font-weight:700;line-height:1}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+.decision{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.5rem;padding:1.6rem 0;border-top:1px solid rgba(107,45,31,.15)}
+.decision h3{font-size:1.15rem;margin:0}
+@media (max-width:640px){.decision{grid-template-columns:1fr;gap:.5rem}}
+
+/* before/after slider */
+.compare{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#fff;border:1px solid rgba(107,45,31,.15);margin-top:1.2rem;--pos:50%}
+.compare svg{position:absolute;inset:0;width:100%;height:100%}
+.compare .after{clip-path:inset(0 0 0 var(--pos))}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--maroon);transform:translateX(-50%);pointer-events:none}
+.compare .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--maroon);color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem}
+.compare .tag{position:absolute;top:.8rem;background:rgba(59,31,23,.85);color:#fff;font-size:.8rem;font-weight:700;padding:.2rem .7rem;border-radius:999px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare-caption{overflow-wrap:anywhere;font-size:.9rem;color:var(--ink-soft);margin-top:.6rem}
+
+/* swatches */
+.swatches{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.swatch{width:110px}
+.swatch span{display:block;height:80px;border-radius:14px;border:2px dashed rgba(107,45,31,.3);background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(107,45,31,.06) 8px 16px)}
+.swatch small{display:block;margin-top:.35rem;color:var(--ink-soft)}
+
+/* a11y checklist */
+.checks{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.7rem}
+.checks li{background:#fff;border-radius:14px;padding:.9rem 1.1rem;border:1px solid rgba(107,45,31,.12);display:flex;gap:.8rem}
+.checks li b{color:var(--teal)}
+
+/* reflection */
+.reflect{background:var(--paper)}
+.quote{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:var(--maroon);font-style:italic;line-height:1.3;border-left:4px solid var(--stain);padding-left:1.2rem;margin:2rem 0}
+
+/* next project */
+.next{display:block;text-decoration:none;background:var(--maroon);color:var(--cream);border-radius:var(--radius);padding:clamp(2rem,5vw,3.5rem);transition:transform .3s}
+.next:hover{transform:translateY(-4px)}
+.next .eyebrow{color:var(--gold)}
+.next h2{color:var(--cream);margin:0}
+footer{padding:2rem 0 3rem;color:var(--ink-soft);font-size:.92rem}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+body.reduce-motion *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+body.reduce-motion .draw{stroke-dashoffset:0}
+body.reduce-motion .stop-dot,body.reduce-motion .reveal{opacity:1;transform:none}
+/* responsive: small phones and very large screens */
+@media (max-width:380px){
+  .site-nav a{padding:.45rem .5rem !important;font-size:.78rem !important;letter-spacing:0}
+  .site-nav a.cta{padding:.45rem .7rem !important}
+}
+@media (min-width:1800px){html{font-size:calc(125% * var(--scale))}.wrap,.hero-inner{width:min(1480px,84vw) !important}}
+@media (min-width:2400px){html{font-size:calc(150% * var(--scale))}.wrap,.hero-inner{width:min(1900px,82vw) !important}}
+.site-nav a.nav-cv{display:inline-flex;align-items:center;gap:.3rem}
+.site-nav a.nav-cv svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hdr-cv{display:none}
+@media (max-width:480px){
+  .site-nav a.nav-cv{display:none}
+  .hdr-cv{display:inline-flex;order:1;margin-left:auto;align-items:center;gap:.35rem;height:40px;padding:0 .9rem;border-radius:999px;border:1px solid rgba(74,44,23,.2);
+    color:var(--ink);text-decoration:none;font-size:.82rem;background:rgba(250,244,235,.6)}
+  .hdr-cv svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .display-toggle{order:2;margin-left:.45rem !important}
+  .header-inner{column-gap:.5rem !important}
+  .logo[data-signature] svg{width:140px !important}
+}
+@media (max-width:370px){.hdr-cv{width:40px;padding:0;justify-content:center}.hdr-cv .t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- Delete this yellow bar once every ✎ prompt is replaced -->
+<div class="prompt-note">Draft: replace each ✎ box with your real content before publishing.</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Farha Sajid, home" data-signature data-delay="300"></a><!-- EDIT: name lives in signature.js -->
+    <nav class="site-nav" aria-label="Main">
+      <a class="active" href="index.html#work">Work</a>
+      <a href="index.html#story">Story</a>
+      <a class="nav-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+      <a class="cta" href="index.html#contact">Chai &amp; chat?</a>
+    </nav>
+    <a class="hdr-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+    <div class="tools" role="group" aria-label="Display settings">
+      <button id="text-down" aria-label="Make text smaller">A−</button>
+      <button id="text-up" aria-label="Make text larger">A+</button>
+      <button id="motion-toggle" aria-pressed="false">Reduce motion</button>
+    </div>
+  </div>
+</header>
+
+<nav class="chapters" aria-label="Case study chapters">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← All work</a>
+    <a href="#overview">Overview</a>
+    <a href="#paste">1 · Mixing the paste</a>
+    <a href="#apply">2 · Applying the design</a>
+    <a href="#stain">3 · Letting it develop</a>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</nav>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="overview" data-next="Overview">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="status"><i></i> Phase 1 in progress</span>
+          <span class="eyebrow">Case study · Freelance</span>
+          <h1>Seerah Journey App</h1>
+          <p class="lede">An illustrated, landscape journey that makes learning the Seerah feel like an adventure, one stop at a time.</p>
+        </div>
+        <div class="scene" id="scene">
+          <svg viewBox="0 0 600 400" class="henna" role="img" aria-label="Illustration: a path winding over hills, with stops along the way">
+            <circle cx="470" cy="95" r="42" fill="#F2C46B" opacity=".85"/>
+            <path d="M0 250 C120 200 220 230 330 200 S520 160 600 180 V400 H0Z" style="fill:var(--hill1);stroke:none"/>
+            <path d="M0 300 C140 260 260 300 380 270 S540 240 600 255 V400 H0Z" style="fill:var(--hill2);stroke:none"/>
+            <path d="M0 350 C160 320 300 360 420 335 S560 320 600 330 V400 H0Z" style="fill:var(--hill3);stroke:none"/>
+            <path class="draw" pathLength="1" stroke-dasharray="1" d="M60 375 C150 360 140 300 230 300 S350 330 390 265 S470 210 540 190"/>
+            <circle class="stop-dot" cx="60" cy="375" r="9" style="transition-delay:.2s"/>
+            <circle class="stop-dot" cx="230" cy="300" r="9" style="transition-delay:.9s"/>
+            <circle class="stop-dot" cx="390" cy="265" r="9" style="transition-delay:1.5s"/>
+            <circle class="stop-dot" cx="540" cy="190" r="11" style="transition-delay:2.1s"/>
+            <path class="draw" pathLength="1" d="M540 190 V150 L566 160 L540 170" style="transition-delay:2.2s"/>
+          </svg>
+        </div>
+      </div>
+
+      <dl class="meta">
+        <div><dt>My role</dt><dd>UX/UI design, illustration &amp; brand</dd></div>
+        <div><dt>Client</dt><dd>Freelance client</dd></div><!-- EDIT: name the client only with their permission -->
+        <div><dt>Timeline</dt><dd>Phase 1 · through Jan 2027</dd></div>
+        <div><dt>Tools</dt><dd>EDIT: e.g. Figma, Procreate</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== TL;DR ===================== -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">The short version</span>
+      <div class="tldr reveal">
+        <div><h3>The problem</h3><p class="prompt">One sentence. What made learning the Seerah hard or unengaging for your users?</p></div>
+        <div><h3>My role</h3><p class="prompt">What you owned: research, flows, UI, illustrations, brand?</p></div>
+        <div><h3>The approach</h3><p class="prompt">The big idea, e.g. "Turn the Seerah into a journey you travel through."</p></div>
+        <div><h3>The outcome</h3><p class="prompt">Where Phase 1 is now, and any feedback so far. Update when it's done.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 1: PASTE ===================== -->
+  <div class="chapter-card" id="paste" data-next="Chapter 1 · Mixing the paste">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M10 30 Q35 70 60 30 M8 30 H62 M24 22 Q28 14 24 6 M35 22 Q39 14 35 6 M46 22 Q50 14 46 6"/></svg>
+      <span class="eyebrow">Chapter 1 · Research</span>
+      <h2>Mixing the paste</h2>
+      <p>Good henna starts long before the cone touches skin. So does good design.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="block" style="margin-top:0">
+        <h2>The challenge</h2>
+        <p class="prompt">2–3 sentences. What did the client come to you with? What were the goals for Phase 1? What made it tricky (a big story to tell, a wide age range, respectful representation)?</p>
+      </div>
+
+      <div class="block">
+        <h2>Who it's for</h2>
+        <p class="prompt">Describe the audience in your own words. Replace the three cards below with the real user groups you designed for.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <div class="card reveal"><h3>User group 1</h3><p class="prompt">Who they are, what they need, what frustrates them.</p></div>
+        <div class="card reveal"><h3>User group 2</h3><p class="prompt">Who they are, what they need, what frustrates them.</p></div>
+        <div class="card reveal"><h3>User group 3</h3><p class="prompt">Who they are, what they need, what frustrates them.</p></div>
+      </div>
+    </div>
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>How I researched</h2>
+        <p class="prompt">What did you actually do? Client interviews, looking at existing Seerah apps and books, talking to parents or learners, reviewing similar journey-style apps. Add a photo of your notes or mood board if you have one.</p>
+      </div>
+      <div class="block">
+        <h2>What I learned</h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <div class="card insight reveal"><div class="num">01</div><p class="prompt">A key insight from research, and why it mattered.</p></div>
+        <div class="card insight reveal"><div class="num">02</div><p class="prompt">A key insight from research, and why it mattered.</p></div>
+        <div class="card insight reveal"><div class="num">03</div><p class="prompt">A key insight from research, and why it mattered.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 2: APPLY ===================== -->
+  <div class="chapter-card" id="apply" data-next="Chapter 2 · Applying the design">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M48 8 L62 22 L22 58 L10 60 L12 48 Z M18 52 Q30 40 26 30 Q22 20 34 16"/></svg>
+      <span class="eyebrow">Chapter 2 · Design</span>
+      <h2>Applying the design</h2>
+      <p>Line by line, every detail with a reason.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>Key design decisions</h2>
+      <p>The choices that shaped the app, and why I made them.</p>
+      <div class="decision reveal">
+        <h3>A journey, in landscape</h3>
+        <p class="prompt">Why a journey map? Why landscape orientation? What does it do for the learner (a sense of progress, exploration, memory)?</p>
+      </div>
+      <div class="decision reveal">
+        <h3>Illustration style</h3>
+        <p class="prompt">How you chose the illustration style, and how you kept it respectful and appropriate for the subject.</p>
+      </div>
+      <div class="decision reveal">
+        <h3>Navigation &amp; flow</h3>
+        <p class="prompt">How users move between stops. What you simplified so nobody gets lost.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="block">
+        <h2>From wireframe to final</h2>
+        <div class="compare reveal" id="compare">
+          <!-- EDIT: replace both SVGs with <img> of your real wireframe and final screen -->
+          <svg class="before" viewBox="0 0 1600 900" aria-hidden="true">
+            <rect width="1600" height="900" fill="#F4F4F2"/>
+            <rect x="60" y="50" width="300" height="40" rx="8" fill="#D9D9D6"/>
+            <rect x="1380" y="50" width="160" height="40" rx="20" fill="#D9D9D6"/>
+            <path d="M140 760 C400 700 420 520 700 520 S1000 600 1100 430 S1300 260 1460 230" fill="none" stroke="#BDBDBA" stroke-width="10" stroke-dasharray="24 18"/>
+            <g fill="#CFCFCC"><circle cx="140" cy="760" r="34"/><circle cx="700" cy="520" r="34"/><circle cx="1100" cy="430" r="34"/><circle cx="1460" cy="230" r="40"/></g>
+            <rect x="760" y="600" width="420" height="200" rx="16" fill="#fff" stroke="#CFCFCC" stroke-width="4"/>
+            <rect x="790" y="630" width="260" height="24" rx="6" fill="#D9D9D6"/><rect x="790" y="670" width="350" height="16" rx="6" fill="#E6E6E3"/><rect x="790" y="700" width="300" height="16" rx="6" fill="#E6E6E3"/><rect x="790" y="740" width="140" height="36" rx="18" fill="#CFCFCC"/>
+          </svg>
+          <svg class="after" viewBox="0 0 1600 900" aria-hidden="true">
+            <rect width="1600" height="900" fill="#EADFC8"/>
+            <circle cx="1250" cy="200" r="110" fill="#F2C46B" opacity=".85"/>
+            <path d="M0 560 C300 470 600 540 900 480 S1400 420 1600 450 V900 H0Z" fill="#E1CAA6"/>
+            <path d="M0 680 C360 600 700 690 1000 630 S1450 590 1600 610 V900 H0Z" fill="#CFAF84"/>
+            <path d="M0 800 C400 750 800 820 1100 780 S1500 760 1600 770 V900 H0Z" fill="#B48E62"/>
+            <path d="M140 760 C400 700 420 520 700 520 S1000 600 1100 430 S1300 260 1460 230" fill="none" stroke="#4A2C17" stroke-width="10" stroke-dasharray="24 18" stroke-linecap="round"/>
+            <g fill="#4A2C17"><circle cx="140" cy="760" r="34"/><circle cx="700" cy="520" r="34"/><circle cx="1100" cy="430" r="34"/></g>
+            <circle cx="1460" cy="230" r="44" fill="#B9893F" stroke="#4A2C17" stroke-width="8"/>
+            <rect x="60" y="50" width="300" height="44" rx="10" fill="#4A2C17" opacity=".9"/>
+            <rect x="1380" y="50" width="160" height="44" rx="22" fill="#8A4F22"/>
+            <rect x="760" y="600" width="420" height="200" rx="22" fill="#FFFBF4" stroke="#4A2C17" stroke-width="4"/>
+            <rect x="790" y="630" width="260" height="26" rx="6" fill="#4A2C17"/><rect x="790" y="672" width="350" height="16" rx="6" fill="#C8A98A"/><rect x="790" y="702" width="300" height="16" rx="6" fill="#C8A98A"/><rect x="790" y="740" width="170" height="40" rx="20" fill="#4A2C17"/>
+          </svg>
+          <span class="tag" style="left:.8rem">Wireframe</span>
+          <span class="tag" style="right:.8rem">Final design</span>
+          <div class="handle" aria-hidden="true"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare wireframe and final design. Move right to see more of the wireframe.">
+        </div>
+        <p class="compare-caption">Drag to compare. Placeholder art: swap in your real wireframe and final screen.</p>
+      </div>
+    </div>
+
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>Brand &amp; visual language</h2>
+        <p class="prompt">The feeling you wanted (warm, reverent, adventurous?) and how the colors, type and illustrations create it.</p>
+        <div class="swatches">
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+        </div>
+        <p class="compare-caption" style="margin-top:.8rem">EDIT: give each &lt;span&gt; a style="background:#yourcolor;border:0".</p>
+      </div>
+
+      <div class="block">
+        <h2>Designed for every learner</h2>
+        <p>Accessibility shaped this project from the start. Keep only the choices you really made:</p>
+        <ul class="checks">
+          <li><b>Aa</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Readable text: sizes and contrast you chose, and why (young readers, older readers, weak eyesight).</span></li>
+          <li><b>👆</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Large tap targets and simple gestures for small hands and older users.</span></li>
+          <li><b>◐</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Not relying on color alone: icons and labels alongside color.</span></li>
+          <li><b>♪</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Anything else, e.g. narration, captions, or reading level.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 3: STAIN ===================== -->
+  <div class="chapter-card" id="stain" data-next="Chapter 3 · Letting it develop">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M35 8 C50 28 56 38 56 46 A21 21 0 0 1 14 46 C14 38 20 28 35 8 Z M26 46 A9 9 0 0 0 35 55"/></svg>
+      <span class="eyebrow">Chapter 3 · Test &amp; outcome</span>
+      <h2>Letting the stain develop</h2>
+      <p>The real result shows over time.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>Feedback &amp; iterations</h2>
+      <p class="prompt">What feedback did you get (from the client or test users), and what did you change because of it? A small before/after of one change is great here.</p>
+
+      <div class="block">
+        <h2>Where it stands</h2>
+        <p class="prompt">Phase 1 status: what's designed, and what's next in Phase 2. When it's finished, add results: client reaction, user feedback, anything measurable. Only include real numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflect" data-next="What I learned">
+    <div class="wrap narrow">
+      <span class="eyebrow">Reflection</span>
+      <h2>What I learned</h2>
+      <p class="quote">✎ One line you'd want a recruiter to remember about this project.</p>
+      <p class="prompt">2–3 sentences: what this project taught you as a designer, and what you'd do differently next time.</p>
+    </div>
+  </section>
+
+  <section data-next="Next project">
+    <div class="wrap">
+      <a class="next" data-cursor="Next" href="loreal.html">
+        <span class="eyebrow">Next project →</span>
+        <h2>L'Oréal Beauty Assistant</h2>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Farha Sajid · <a href="index.html">Back to home</a> · <a href="https://github.com/fasajid" target="_blank" rel="noopener">GitHub ↗</a> · <span>Designed &amp; coded by me in HTML, CSS and JavaScript</span></div>
+</footer>
+
+<script>
+{
+  const root = document.documentElement, body = document.body;
+  const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+
+  // text size + motion (shared with the homepage)
+  let scale = parseFloat(store.get("scale")) || 1;
+  const applyScale = () => root.style.setProperty("--scale", scale);
+  applyScale();
+  document.getElementById("text-up").onclick = () => { scale = Math.min(1.5, +(scale + .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  document.getElementById("text-down").onclick = () => { scale = Math.max(.9, +(scale - .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  const motionBtn = document.getElementById("motion-toggle");
+  const setMotion = r => { body.classList.toggle("reduce-motion", r); motionBtn.setAttribute("aria-pressed", r); store.set("reduce", r ? "1" : "0"); };
+  const saved = store.get("reduce");
+  setMotion(saved === null ? matchMedia("(prefers-reduced-motion: reduce)").matches : saved === "1");
+  motionBtn.onclick = () => setMotion(!body.classList.contains("reduce-motion"));
+
+
+  // draw the hero path
+  requestAnimationFrame(() => setTimeout(() => document.getElementById("scene").classList.add("is-drawn"), 150));
+
+  // reveal on scroll
+  const revealObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); revealObs.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+
+  // stain color + progress bar
+  const fresh = [154,94,40], deep = [74,44,23], bar = document.getElementById("progress");
+  let ticking = false;
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    root.style.setProperty("--stain", `rgb(${fresh.map((v,i) => Math.round(v + (deep[i]-v)*p)).join(",")})`);
+    bar.style.width = (p*100) + "%";
+    ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // highlight the current chapter
+  const links = [...document.querySelectorAll(".chapters a[href^='#']")];
+  const chapterObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  ["overview","paste","apply","stain"].forEach(id => chapterObs.observe(document.getElementById(id)));
+
+  // before/after slider
+  const cmp = document.getElementById("compare");
+  cmp.querySelector("input").addEventListener("input", e => cmp.style.setProperty("--pos", e.target.value + "%"));
+}
+</script>
+<script src="signature.js" defer></script>
+<script src="ui.js" defer></script>
+<script src="progress.js" defer></script>
+<script src="cursor.js" defer></script>
+</body>
+</html>

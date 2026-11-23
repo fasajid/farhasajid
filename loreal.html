@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Oréal Smart Routine &amp; Product Advisor · Case study · Farha Sajid</title>
+<meta name="description" content="An AI beauty advisor that turns a shelf of products into a personal routine, in five languages.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5EDE2">
+<!-- share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farha Sajid">
+<meta property="og:url" content="https://fasajid.github.io/farhasajid/loreal.html">
+<meta property="og:title" content="L'Oréal Smart Routine &amp; Product Advisor · Case study · Farha Sajid">
+<meta property="og:description" content="An AI beauty advisor that turns a shelf of products into a personal routine, in five languages.">
+<meta property="og:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Farha Sajid, UX/UI designer and web developer: an illustrated henna desk with a sketchbook, sticky notes and an Atlanta skyline in henna">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="L'Oréal Smart Routine &amp; Product Advisor · Case study · Farha Sajid">
+<meta name="twitter:description" content="An AI beauty advisor that turns a shelf of products into a personal routine, in five languages.">
+<meta name="twitter:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<!-- /share preview -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+/* Same theme as index.html. Change colors in both files. */
+:root{
+  --cream:#F5EDE2;--paper:#EBDFCC;--ink:#24170F;--ink-soft:#5C4433;--black:#140E0A;
+  --maroon:#4A2C17;--orange:#9A5E28;--gold:#B9893F;--teal:#8A4F22;
+  --sky:#EBDFCC;--hill1:#E2CFB4;--hill2:#CDB08A;--hill3:#A98457;
+  --stain:#9A5E28;--scale:1;--radius:22px;
+  --serif:"Fraunces",Georgia,serif;--sans:"Montserrat",system-ui,sans-serif;
+}
+*{box-sizing:border-box;min-width:0}
+html{font-size:calc(112.5% * var(--scale));scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:clip}
+a{color:var(--maroon);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0 0 .6em;color:var(--maroon);text-wrap:balance;font-weight:400;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-weight:400}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:66ch}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.narrow{max-width:760px}
+section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+.eyebrow{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;color:var(--teal);display:block;margin-bottom:.7rem}
+.accent{color:var(--stain);font-style:italic}
+.skip{position:absolute;left:-999px;top:0;background:var(--maroon);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* ✎ fill-in prompts: replace each one with your real content */
+.prompt{border:2px dashed rgba(107,45,31,.35);border-radius:14px;padding:1rem 1.2rem;background:rgba(255,255,255,.55);color:var(--ink-soft);font-style:italic;margin:0 0 1.2rem;max-width:66ch}
+.prompt::before{content:"✎ Write: ";font-style:normal;font-weight:700;color:var(--maroon)}
+.prompt-note{background:var(--gold);color:var(--black);font-weight:700;text-align:center;padding:.55rem 1rem;font-size:.9rem}
+
+/* header */
+.site-header{border-bottom:0;background:transparent}
+.header-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.8rem 0}
+.site-nav{position:relative;display:flex;align-items:center;gap:.1rem;margin-left:auto;padding:.28rem;background:rgba(235,223,204,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(74,44,23,.1);border-radius:999px;box-shadow:0 8px 24px -16px rgba(74,44,23,.35)}
+.site-nav a{position:relative;z-index:1;text-decoration:none;color:var(--ink);font-size:.84rem;letter-spacing:.02em;padding:.42rem .85rem;border-radius:999px;transition:color .3s,background .3s;white-space:nowrap}
+.site-nav a:hover,.site-nav a.active{color:var(--deep,var(--maroon))}
+.nav-chip{position:absolute;z-index:0;top:.28rem;bottom:.28rem;left:0;width:0;border-radius:999px;background:var(--offwhite,var(--cream));box-shadow:0 3px 10px -5px rgba(74,44,23,.4);opacity:0;
+  transition:left .45s cubic-bezier(.3,1.25,.4,1),width .45s cubic-bezier(.3,1.25,.4,1),opacity .3s}
+.nav-chip::after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--gold)}
+.site-nav a.cta{background:var(--deep,var(--maroon));color:var(--offwhite,var(--cream));margin-left:.3rem;padding:.42rem 1rem}
+.site-nav a.cta:hover{background:var(--black,#140E0A)}
+.tools{display:flex;gap:.3rem} /* fallback only: ui.js moves these into the Aa options under the header */
+.tools button{font:inherit;font-size:.78rem;background:transparent;color:var(--ink-soft);border:1px solid rgba(74,44,23,.22);border-radius:999px;padding:.3rem .7rem;cursor:pointer;min-height:34px}
+@media (max-width:860px){
+  .site-header{position:relative}
+  .header-inner{gap:.9rem}
+  .site-nav{order:3;width:100%;margin-left:0;margin-right:0;justify-content:space-between}
+  .site-nav{overflow-x:auto;scrollbar-width:none}
+  .site-nav a{padding:.5rem .65rem;font-size:.85rem}
+  .site-nav a.cta{padding:.5rem .9rem}
+}
+
+/* sticky chapter bar */
+.chapters{position:sticky;top:0;z-index:40;background:rgba(245,237,226,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(107,45,31,.12)}
+.chapters .wrap{display:flex;gap:.4rem 1.2rem;align-items:center;flex-wrap:wrap;padding:.6rem 0}
+.chapters a{text-decoration:none;font-weight:700;color:var(--ink-soft);padding:.35rem .2rem;border-bottom:3px solid transparent;font-size:.95rem}
+.chapters a.active{color:var(--maroon);border-color:var(--stain)}
+.chapters .back{margin-right:auto;color:var(--maroon)}
+@media (max-width:640px){
+  .chapters .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:1rem}
+  .chapters a{white-space:nowrap;flex:none;font-size:.88rem}
+  .chapters .back{margin-right:0}
+}
+#progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--stain)}
+
+
+/* henna lines */
+.henna path,.henna circle.line{fill:none;stroke:var(--stain);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s ease}
+.is-drawn .draw{stroke-dashoffset:0}
+.stop-dot{fill:var(--stain);opacity:0;transition:opacity .6s ease}
+.is-drawn .stop-dot{opacity:1}
+
+/* hero */
+.hero{padding-top:clamp(2rem,5vw,4rem)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.status{display:inline-flex;gap:.45rem;align-items:center;background:#fff;border:1px solid rgba(107,45,31,.2);padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:1rem}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--gold);display:inline-block}
+.lede{font-size:1.2rem;color:var(--ink-soft)}
+.scene{border-radius:var(--radius);overflow:hidden;background:var(--sky);aspect-ratio:3/2}
+.scene svg{width:100%;height:100%;display:block}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2.5rem;padding:1.4rem 0;border-top:1px solid rgba(107,45,31,.18);border-bottom:1px solid rgba(107,45,31,.18)}
+.meta dt{font-weight:700;color:var(--teal);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.meta dd{margin:.2rem 0 0}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}}
+
+/* TL;DR */
+.tldr{background:#fff;border-radius:var(--radius);padding:clamp(1.4rem,3vw,2.2rem);border:1px solid rgba(107,45,31,.12);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
+.tldr h3{font-size:1.05rem;margin-bottom:.3rem}
+.tldr p{font-size:.95rem;margin:0}
+@media (max-width:860px){.tldr{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tldr{grid-template-columns:1fr}}
+
+/* chapter title cards */
+.chapter-card{background:var(--maroon);color:var(--cream);text-align:center;padding:clamp(5rem,12vw,8.5rem) 0}
+.chapter-card .eyebrow{color:var(--gold)}
+.chapter-card h2{color:var(--cream);font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:.3rem}
+.chapter-card p{margin:0 auto;color:#F3E3D2;font-size:1.1rem}
+.chapter-card svg{width:90px;height:90px;margin-bottom:1rem}
+.chapter-card .henna path{stroke:var(--gold)}
+
+/* blocks */
+.block{margin-top:4.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin-top:1.2rem}
+.card{background:#fff;border-radius:18px;padding:1.4rem;border:1px solid rgba(107,45,31,.12)}
+.card .prompt{margin:0;font-size:.95rem}
+.card h3{font-size:1.1rem}
+.insight{border-top:5px solid var(--stain)}
+.insight .num{font-family:var(--serif);font-size:2rem;color:var(--stain);font-weight:700;line-height:1}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+.decision{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.5rem;padding:1.6rem 0;border-top:1px solid rgba(107,45,31,.15)}
+.decision h3{font-size:1.15rem;margin:0}
+@media (max-width:640px){.decision{grid-template-columns:1fr;gap:.5rem}}
+
+/* before/after slider */
+.compare{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#fff;border:1px solid rgba(107,45,31,.15);margin-top:1.2rem;--pos:50%}
+.compare svg{position:absolute;inset:0;width:100%;height:100%}
+.compare .after{clip-path:inset(0 0 0 var(--pos))}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--maroon);transform:translateX(-50%);pointer-events:none}
+.compare .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--maroon);color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem}
+.compare .tag{position:absolute;top:.8rem;background:rgba(59,31,23,.85);color:#fff;font-size:.8rem;font-weight:700;padding:.2rem .7rem;border-radius:999px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare-caption{overflow-wrap:anywhere;font-size:.9rem;color:var(--ink-soft);margin-top:.6rem}
+
+/* swatches */
+.swatches{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.swatch{width:110px}
+.swatch span{display:block;height:80px;border-radius:14px;border:2px dashed rgba(107,45,31,.3);background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(107,45,31,.06) 8px 16px)}
+.swatch small{display:block;margin-top:.35rem;color:var(--ink-soft)}
+
+/* a11y checklist */
+.checks{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.7rem}
+.checks li{background:#fff;border-radius:14px;padding:.9rem 1.1rem;border:1px solid rgba(107,45,31,.12);display:flex;gap:.8rem}
+.checks li b{color:var(--teal)}
+
+/* reflection */
+.reflect{background:var(--paper)}
+.quote{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:var(--maroon);font-style:italic;line-height:1.3;border-left:4px solid var(--stain);padding-left:1.2rem;margin:2rem 0}
+
+/* next project */
+.next{display:block;text-decoration:none;background:var(--maroon);color:var(--cream);border-radius:var(--radius);padding:clamp(2rem,5vw,3.5rem);transition:transform .3s}
+.next:hover{transform:translateY(-4px)}
+.next .eyebrow{color:var(--gold)}
+.next h2{color:var(--cream);margin:0}
+footer{padding:2rem 0 3rem;color:var(--ink-soft);font-size:.92rem}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+body.reduce-motion *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+body.reduce-motion .draw{stroke-dashoffset:0}
+body.reduce-motion .stop-dot,body.reduce-motion .reveal{opacity:1;transform:none}
+/* L'Oréal case study extras */
+.btn-live{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;padding:.8rem 1.3rem;border-radius:999px;background:var(--maroon);color:var(--cream);text-decoration:none;font-weight:700;min-height:48px}
+.btn-live:hover{background:var(--teal)}
+.btn-live.ghost{background:transparent;color:var(--maroon);border:1px solid var(--maroon);margin-left:.5rem}
+.scene.app{background:#F7F1EA}
+.flow{list-style:none;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;counter-reset:f}
+.flow li{position:relative;background:#fff;border-radius:16px;padding:1.3rem 1.2rem;border:1px solid rgba(74,44,23,.12);counter-increment:f}
+.flow li::before{content:counter(f,decimal-leading-zero);display:block;font-family:var(--serif);font-size:1.6rem;color:var(--gold);margin-bottom:.4rem}
+.flow h3{margin:0 0 .3rem;font-size:1.05rem}
+.flow p{margin:0;font-size:.95rem}
+.langs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.langs span{padding:.45rem .9rem;border-radius:999px;background:#fff;border:1px solid rgba(74,44,23,.15);font-weight:700}
+.langs span[dir=rtl]{font-family:system-ui,sans-serif}
+.cats{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.cats span{font-size:.85rem;padding:.3rem .7rem;border-radius:8px;background:rgba(185,137,63,.14)}
+.hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.flow{grid-template-columns:1fr}.btn-live.ghost{margin-left:0}}
+/* responsive: small phones and very large screens */
+@media (max-width:380px){
+  .site-nav a{padding:.45rem .5rem !important;font-size:.78rem !important;letter-spacing:0}
+  .site-nav a.cta{padding:.45rem .7rem !important}
+}
+@media (min-width:1800px){html{font-size:calc(125% * var(--scale))}.wrap,.hero-inner{width:min(1480px,84vw) !important}}
+@media (min-width:2400px){html{font-size:calc(150% * var(--scale))}.wrap,.hero-inner{width:min(1900px,82vw) !important}}
+.site-nav a.nav-cv{display:inline-flex;align-items:center;gap:.3rem}
+.site-nav a.nav-cv svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hdr-cv{display:none}
+@media (max-width:480px){
+  .site-nav a.nav-cv{display:none}
+  .hdr-cv{display:inline-flex;order:1;margin-left:auto;align-items:center;gap:.35rem;height:40px;padding:0 .9rem;border-radius:999px;border:1px solid rgba(74,44,23,.2);
+    color:var(--ink);text-decoration:none;font-size:.82rem;background:rgba(250,244,235,.6)}
+  .hdr-cv svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .display-toggle{order:2;margin-left:.45rem !important}
+  .header-inner{column-gap:.5rem !important}
+  .logo[data-signature] svg{width:140px !important}
+}
+@media (max-width:370px){.hdr-cv{width:40px;padding:0;justify-content:center}.hdr-cv .t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- Delete this yellow bar once every ✎ prompt is replaced -->
+<div class="prompt-note">Draft: replace each ✎ box with your real content before publishing.</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Farha Sajid, home" data-signature data-delay="300"></a><!-- EDIT: name lives in signature.js -->
+    <nav class="site-nav" aria-label="Main">
+      <a class="active" href="index.html#work">Work</a>
+      <a href="index.html#story">Story</a>
+      <a class="nav-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+      <a class="cta" href="index.html#contact">Chai &amp; chat?</a>
+    </nav>
+    <a class="hdr-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+    <div class="tools" role="group" aria-label="Display settings">
+      <button id="text-down" aria-label="Make text smaller">A−</button>
+      <button id="text-up" aria-label="Make text larger">A+</button>
+      <button id="motion-toggle" aria-pressed="false">Reduce motion</button>
+    </div>
+  </div>
+</header>
+
+<nav class="chapters" aria-label="Case study chapters">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← All work</a>
+    <a href="#overview">Overview</a>
+    <a href="#paste">1 · Mixing the paste</a>
+    <a href="#apply">2 · Applying the design</a>
+    <a href="#stain">3 · Letting it develop</a>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</nav>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="overview" data-next="Overview">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="status"><i></i> Live on GitHub Pages</span>
+          <span class="eyebrow">Case study · Career Accelerator program</span>
+          <h1>L'Oréal Smart Routine &amp; Product Advisor</h1>
+          <p class="lede">An AI beauty advisor that turns a shelf of products into a personal routine, in five languages.</p>
+          <a class="btn-live" href="https://fasajid.github.io/09-prj-loreal-routine-builder/" target="_blank" rel="noopener">View the live app <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="scene app" id="scene">
+          <!-- EDIT: swap this illustration for a real screenshot: <img src="images/loreal.png" alt="…"> -->
+          <svg viewBox="0 0 600 400" role="img" aria-label="Illustration of the app: product categories, selected products, a Generate Routine button and a chat">
+            <rect x="30" y="26" width="540" height="348" rx="18" fill="#fff" stroke="#E7DCCD"/>
+            <rect x="54" y="48" width="96" height="16" rx="4" fill="#1A1A1A"/>
+            <rect x="466" y="46" width="80" height="22" rx="11" fill="#F2EADF"/>
+            <g fill="#F2EADF"><rect x="54" y="84" width="72" height="20" rx="10"/><rect x="132" y="84" width="96" height="20" rx="10"/><rect x="234" y="84" width="70" height="20" rx="10"/><rect x="310" y="84" width="62" height="20" rx="10"/></g>
+            <rect x="54" y="84" width="72" height="20" rx="10" fill="#B9893F"/>
+            <g class="cards">
+              <rect x="54" y="122" width="96" height="110" rx="12" fill="#FAF6F0" stroke="#E7DCCD"/><rect x="160" y="122" width="96" height="110" rx="12" fill="#FAF6F0" stroke="#B9893F" stroke-width="2"/><rect x="266" y="122" width="96" height="110" rx="12" fill="#FAF6F0" stroke="#E7DCCD"/>
+              <rect x="88" y="136" width="28" height="56" rx="8" fill="#D8C3A5"/><rect x="190" y="146" width="36" height="46" rx="10" fill="#C9A27A"/><rect x="300" y="138" width="28" height="54" rx="6" fill="#E3D2BC"/>
+              <g fill="#E7DCCD"><rect x="66" y="204" width="70" height="8" rx="4"/><rect x="172" y="204" width="70" height="8" rx="4"/><rect x="278" y="204" width="70" height="8" rx="4"/></g>
+              <circle cx="242" cy="136" r="9" fill="#B9893F"/><path d="M238 136 l3 3 l5 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </g>
+            <rect x="54" y="250" width="308" height="44" rx="12" fill="#FAF6F0" stroke="#E7DCCD"/>
+            <g fill="#E7DCCD"><rect x="68" y="264" width="54" height="16" rx="8"/><rect x="128" y="264" width="54" height="16" rx="8"/></g>
+            <rect x="54" y="310" width="308" height="40" rx="20" fill="#4A2C17"/>
+            <rect x="160" y="326" width="96" height="8" rx="4" fill="#F5EDE2"/>
+            <rect x="384" y="84" width="162" height="266" rx="14" fill="#FAF6F0" stroke="#E7DCCD"/>
+            <rect x="398" y="102" width="112" height="34" rx="12" fill="#fff" stroke="#E7DCCD"/>
+            <rect x="420" y="148" width="112" height="46" rx="12" fill="#B9893F" opacity=".9"/>
+            <rect x="398" y="206" width="124" height="58" rx="12" fill="#fff" stroke="#E7DCCD"/>
+            <g fill="#E7DCCD"><rect x="408" y="114" width="84" height="8" rx="4"/><rect x="408" y="218" width="100" height="7" rx="3.5"/><rect x="408" y="232" width="90" height="7" rx="3.5"/><rect x="408" y="246" width="70" height="7" rx="3.5"/></g>
+            <g fill="#fff"><rect x="430" y="160" width="86" height="7" rx="3.5"/><rect x="430" y="174" width="60" height="7" rx="3.5"/></g>
+            <rect x="398" y="314" width="134" height="24" rx="12" fill="#fff" stroke="#E7DCCD"/>
+            <circle cx="520" cy="326" r="9" fill="#4A2C17"/>
+          </svg>
+        </div>
+      </div>
+
+      <dl class="meta">
+        <div><dt>My role</dt><dd>UX/UI design &amp; front-end development</dd></div>
+        <div><dt>Context</dt><dd>Career Accelerator program project</dd></div>
+        <div><dt>Timeline</dt><dd>✎ e.g. 2 weeks, 2025</dd></div>
+        <div><dt>Built with</dt><dd>HTML, CSS, JavaScript, an AI API, GitHub Pages</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== TL;DR ===================== -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">The short version</span>
+      <div class="tldr reveal">
+        <div><h3>The problem</h3><p>Beauty shelves are overwhelming. People buy products but don't know which ones work together, or in what order to use them.</p></div>
+        <div><h3>My role</h3><p>I designed the experience and built it end to end: layout, interactions, the AI chat, and multilingual support.</p></div>
+        <div><h3>The approach</h3><p>Let people pick what they already have or want, then let an AI advisor turn it into a step-by-step routine they can ask follow-up questions about.</p></div>
+        <div><h3>The outcome</h3><p class="prompt">What you're proudest of, plus any feedback from mentors, reviewers or testers. Only real results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 1: PASTE ===================== -->
+  <div class="chapter-card" id="paste" data-next="Chapter 1 · Mixing the paste">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M10 30 Q35 70 60 30 M8 30 H62 M24 22 Q28 14 24 6 M35 22 Q39 14 35 6 M46 22 Q50 14 46 6"/></svg>
+      <span class="eyebrow">Chapter 1 · Research</span>
+      <h2>Mixing the paste</h2>
+      <p>Before building anything, I needed to understand why choosing products feels so hard.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="block" style="margin-top:0">
+        <h2>The challenge</h2>
+        <p>The brief was to build a routine builder for L'Oréal's product range: a place where shoppers could browse, choose products and get personalised advice from an AI assistant.</p>
+        <p class="prompt">Add the specifics of the brief: what the program asked for, any requirements (e.g. using the product data, keeping the API key secure, saving selections), and what made it tricky.</p>
+      </div>
+
+      <div class="block">
+        <h2>Who it's for</h2>
+        <p class="prompt">Describe the shoppers you designed for in your own words, then edit the three cards below to match.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <div class="card reveal"><h3>The overwhelmed beginner</h3><p class="prompt">Owns a few products, has no idea what order to use them in. Needs simple, confident steps.</p></div>
+        <div class="card reveal"><h3>The busy shopper</h3><p class="prompt">Knows what they want but has no time to research. Needs quick answers, not a wall of products.</p></div>
+        <div class="card reveal"><h3>The multilingual customer</h3><p class="prompt">More comfortable in Arabic, Persian, French or Spanish. Needs the whole experience in their language, including right-to-left reading.</p></div>
+      </div>
+    </div>
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>How I researched</h2>
+        <p class="prompt">What did you actually do? e.g. explored L'Oréal's site and other beauty advisors, looked at how routines are usually ordered, asked friends how they choose products.</p>
+      </div>
+      <div class="block">
+        <h2>What I learned</h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <div class="card insight reveal"><div class="num">01</div><p class="prompt">A key insight, e.g. "People trust a routine more when it explains why each step comes next."</p></div>
+        <div class="card insight reveal"><div class="num">02</div><p class="prompt">A key insight, and why it mattered.</p></div>
+        <div class="card insight reveal"><div class="num">03</div><p class="prompt">A key insight, and why it mattered.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 2: APPLY ===================== -->
+  <div class="chapter-card" id="apply" data-next="Chapter 2 · Applying the design">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M48 8 L62 22 L22 58 L10 60 L12 48 Z M18 52 Q30 40 26 30 Q22 20 34 16"/></svg>
+      <span class="eyebrow">Chapter 2 · Design &amp; build</span>
+      <h2>Applying the design</h2>
+      <p>Four simple steps, from a full shelf to a routine that makes sense.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="flow">
+        <li class="reveal"><h3>Browse</h3><p>Pick a category or search for a product by name.</p></li>
+        <li class="reveal"><h3>Select</h3><p>Tap products to add them. They collect in a "Selected Products" list you can clear any time.</p></li>
+        <li class="reveal"><h3>Generate</h3><p>One button turns your picks into a personalised, step-by-step routine.</p></li>
+        <li class="reveal"><h3>Ask</h3><p>Keep chatting with the advisor to ask follow-up questions about your routine.</p></li>
+      </ol>
+      <div class="cats" aria-label="Product categories">
+        <span>Cleansers</span><span>Moisturizers &amp; Treatments</span><span>Haircare</span><span>Makeup</span><span>Hair Color</span><span>Hair Styling</span><span>Men's Grooming</span><span>Suncare</span><span>Fragrance</span>
+      </div>
+    </div>
+
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>Key design decisions</h2>
+        <div class="decision reveal">
+          <h3>Choose first, then chat</h3>
+          <div>
+          <p>Instead of an empty chat box asking "How can I help?", people start by picking real products. That gives the AI something concrete to work with, and gives shoppers a clear first step.</p>
+          <p class="prompt">Add your own reasoning, or anything you tried first that didn't work.</p></div>
+        </div>
+        <div class="decision reveal">
+          <h3>Your picks, always in view</h3>
+          <div>
+          <p>The Selected Products list keeps every choice visible, with a "Clear all" to start over, so nobody loses track of what they've added.</p></div>
+        </div>
+        <div class="decision reveal">
+          <h3>Five languages, including right to left</h3>
+          <div>
+          <p>The advisor works in English, French, Spanish, Arabic and Persian. Arabic and Persian read right to left, so the layout has to flip, not just the words.</p>
+          <div class="langs"><span lang="en">English</span><span lang="fr">Français</span><span lang="es">Español</span><span lang="ar" dir="rtl">العربية</span><span lang="fa" dir="rtl">فارسی</span></div>
+          <p class="prompt" style="margin-top:1rem">How did you handle the layout flip and the AI's replies in each language? Any surprises?</p></div>
+        </div>
+        <div class="decision reveal">
+          <h3>Keeping the AI safe and on-topic</h3>
+          <div>
+          <p class="prompt">How you connected to the AI (e.g. keeping the API key out of the public code), and how you kept answers focused on beauty and L'Oréal products.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="block">
+        <h2>From wireframe to final</h2>
+        <div class="compare reveal" id="compare">
+          <!-- EDIT: replace both SVGs with <img> of your real wireframe and final screen -->
+          <svg class="before" viewBox="0 0 1600 900" aria-hidden="true">
+            <rect width="1600" height="900" fill="#F4F4F2"/>
+            <rect x="80" y="60" width="240" height="40" rx="8" fill="#D9D9D6"/>
+            <g fill="#D9D9D6"><rect x="80" y="140" width="180" height="44" rx="22"/><rect x="280" y="140" width="220" height="44" rx="22"/><rect x="520" y="140" width="160" height="44" rx="22"/></g>
+            <g fill="#fff" stroke="#CFCFCC" stroke-width="4"><rect x="80" y="230" width="280" height="320" rx="16"/><rect x="390" y="230" width="280" height="320" rx="16"/><rect x="700" y="230" width="280" height="320" rx="16"/></g>
+            <rect x="80" y="600" width="900" height="110" rx="16" fill="#fff" stroke="#CFCFCC" stroke-width="4"/>
+            <rect x="80" y="750" width="900" height="80" rx="40" fill="#CFCFCC"/>
+            <rect x="1040" y="140" width="480" height="690" rx="20" fill="#fff" stroke="#CFCFCC" stroke-width="4"/>
+          </svg>
+          <svg class="after" viewBox="0 0 1600 900" aria-hidden="true">
+            <rect width="1600" height="900" fill="#F7F1EA"/>
+            <rect x="80" y="60" width="240" height="40" rx="8" fill="#1A1A1A"/>
+            <rect x="80" y="140" width="180" height="44" rx="22" fill="#B9893F"/><g fill="#EADFCF"><rect x="280" y="140" width="220" height="44" rx="22"/><rect x="520" y="140" width="160" height="44" rx="22"/></g>
+            <g fill="#fff" stroke="#E2D3BF" stroke-width="4"><rect x="80" y="230" width="280" height="320" rx="22"/><rect x="390" y="230" width="280" height="320" rx="22" stroke="#B9893F" stroke-width="6"/><rect x="700" y="230" width="280" height="320" rx="22"/></g>
+            <g fill="#D8C3A5"><rect x="180" y="270" width="80" height="170" rx="20"/><rect x="480" y="290" width="100" height="150" rx="26"/><rect x="800" y="270" width="80" height="170" rx="16"/></g>
+            <rect x="80" y="600" width="900" height="110" rx="22" fill="#fff" stroke="#E2D3BF" stroke-width="4"/>
+            <rect x="80" y="750" width="900" height="80" rx="40" fill="#4A2C17"/>
+            <rect x="1040" y="140" width="480" height="690" rx="26" fill="#fff" stroke="#E2D3BF" stroke-width="4"/>
+            <rect x="1180" y="200" width="300" height="90" rx="22" fill="#B9893F"/><rect x="1080" y="320" width="320" height="140" rx="22" fill="#F2EADF"/>
+          </svg>
+          <span class="tag" style="left:.8rem">Wireframe</span>
+          <span class="tag" style="right:.8rem">Final design</span>
+          <div class="handle" aria-hidden="true"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare wireframe and final design. Move right to see more of the wireframe.">
+        </div>
+        <p class="compare-caption">Drag to compare. Placeholder art: swap in your real wireframe and final screen.</p>
+      </div>
+    </div>
+
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>Brand &amp; visual language</h2>
+        <p class="prompt">How you made it feel like L'Oréal: premium, clean, confident. Add the real colors and fonts you used below.</p>
+        <div class="swatches">
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+          <div class="swatch"><span></span><small>Color · #hex</small></div>
+        </div>
+        <p class="compare-caption" style="margin-top:.8rem">EDIT: give each &lt;span&gt; a style="background:#yourcolor;border:0".</p>
+      </div>
+
+      <div class="block">
+        <h2>Designed for every shopper</h2>
+        <p>Keep only the choices you really made:</p>
+        <ul class="checks">
+          <li><b>🌐</b><span>Five languages, with a layout that flips for right-to-left readers.</span></li>
+          <li><b>Aa</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Readable text: sizes and contrast you chose, and why.</span></li>
+          <li><b>⌨</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Keyboard and screen reader support for selecting products and chatting.</span></li>
+          <li><b>👆</b><span class="prompt" style="margin:0;border:0;background:none;padding:0">Large tap targets and a layout that works on phones.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 3: STAIN ===================== -->
+  <div class="chapter-card" id="stain" data-next="Chapter 3 · Letting it develop">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M35 8 C50 28 56 38 56 46 A21 21 0 0 1 14 46 C14 38 20 28 35 8 Z M26 46 A9 9 0 0 0 35 55"/></svg>
+      <span class="eyebrow">Chapter 3 · Test &amp; outcome</span>
+      <h2>Letting the stain develop</h2>
+      <p>Testing, fixing, and seeing it work for real people.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>Testing &amp; iterations</h2>
+      <p class="prompt">What did you test (with mentors, classmates, friends), what went wrong, and what did you change? e.g. confusing buttons, AI answers that were too long, layout breaking in Arabic.</p>
+
+      <div class="block">
+        <h2>The result</h2>
+        <p>A working, live beauty advisor: browse nine categories, build a selection, generate a routine, and keep the conversation going in five languages.</p>
+        <p class="prompt">Add feedback or results you received. Only include real numbers.</p>
+        <a class="btn-live" href="https://fasajid.github.io/09-prj-loreal-routine-builder/" target="_blank" rel="noopener">Try it yourself <span aria-hidden="true">↗</span></a>
+        <a class="btn-live ghost" href="https://github.com/fasajid/09-prj-loreal-routine-builder" target="_blank" rel="noopener">See the code <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflect" data-next="What I learned">
+    <div class="wrap narrow">
+      <span class="eyebrow">Reflection</span>
+      <h2>What I learned</h2>
+      <p class="quote">✎ One line you'd want a recruiter to remember, e.g. "Good AI design starts with what people already have in their hands."</p>
+      <p class="prompt">2–3 sentences: what this project taught you about designing with AI and building for many languages, and what you'd do next (e.g. skin type quiz, saving routines).</p>
+    </div>
+  </section>
+
+  <section data-next="Next project">
+    <div class="wrap">
+      <a class="next" data-cursor="Next" href="ascend.html">
+        <span class="eyebrow">Next project →</span>
+        <h2>Ascend</h2>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Farha Sajid · <a href="index.html">Back to home</a> · <a href="https://github.com/fasajid" target="_blank" rel="noopener">GitHub ↗</a> · <span>Designed &amp; coded by me in HTML, CSS and JavaScript</span></div>
+</footer>
+
+<script>
+{
+  const root = document.documentElement, body = document.body;
+  const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+
+  // text size + motion (shared with the homepage)
+  let scale = parseFloat(store.get("scale")) || 1;
+  const applyScale = () => root.style.setProperty("--scale", scale);
+  applyScale();
+  document.getElementById("text-up").onclick = () => { scale = Math.min(1.5, +(scale + .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  document.getElementById("text-down").onclick = () => { scale = Math.max(.9, +(scale - .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  const motionBtn = document.getElementById("motion-toggle");
+  const setMotion = r => { body.classList.toggle("reduce-motion", r); motionBtn.setAttribute("aria-pressed", r); store.set("reduce", r ? "1" : "0"); };
+  const saved = store.get("reduce");
+  setMotion(saved === null ? matchMedia("(prefers-reduced-motion: reduce)").matches : saved === "1");
+  motionBtn.onclick = () => setMotion(!body.classList.contains("reduce-motion"));
+
+
+  // draw the hero path
+  requestAnimationFrame(() => setTimeout(() => document.getElementById("scene").classList.add("is-drawn"), 150));
+
+  // reveal on scroll
+  const revealObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); revealObs.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+
+  // stain color + progress bar
+  const fresh = [154,94,40], deep = [74,44,23], bar = document.getElementById("progress");
+  let ticking = false;
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    root.style.setProperty("--stain", `rgb(${fresh.map((v,i) => Math.round(v + (deep[i]-v)*p)).join(",")})`);
+    bar.style.width = (p*100) + "%";
+    ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // highlight the current chapter
+  const links = [...document.querySelectorAll(".chapters a[href^='#']")];
+  const chapterObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  ["overview","paste","apply","stain"].forEach(id => chapterObs.observe(document.getElementById(id)));
+
+  // before/after slider
+  const cmp = document.getElementById("compare");
+  cmp.querySelector("input").addEventListener("input", e => cmp.style.setProperty("--pos", e.target.value + "%"));
+}
+</script>
+<script src="signature.js" defer></script>
+<script src="ui.js" defer></script>
+<script src="progress.js" defer></script>
+<script src="cursor.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascend · Case study · Farha Sajid</title>
+<meta name="description" content="Ascend: a mobile college-planning app that turns uncertainty into clear next steps for first-generation students.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5EDE2">
+<!-- share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farha Sajid">
+<meta property="og:url" content="https://fasajid.github.io/farhasajid/ascend.html">
+<meta property="og:title" content="Ascend · Case study · Farha Sajid">
+<meta property="og:description" content="A mobile college-planning app that turns uncertainty into clear next steps for first-generation students.">
+<meta property="og:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Farha Sajid, UX/UI designer and web developer: an illustrated henna desk with a sketchbook, sticky notes and an Atlanta skyline in henna">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ascend · Case study · Farha Sajid">
+<meta name="twitter:description" content="A mobile college-planning app that turns uncertainty into clear next steps for first-generation students.">
+<meta name="twitter:image" content="https://fasajid.github.io/farhasajid/og-image.png">
+<!-- /share preview -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+/* Same theme as index.html. Change colors in both files. */
+:root{
+  --cream:#F5EDE2;--paper:#EBDFCC;--ink:#24170F;--ink-soft:#5C4433;--black:#140E0A;
+  --maroon:#4A2C17;--orange:#9A5E28;--gold:#B9893F;--teal:#8A4F22;
+  --sky:#EBDFCC;--hill1:#E2CFB4;--hill2:#CDB08A;--hill3:#A98457;
+  --stain:#9A5E28;--scale:1;--radius:22px;
+  --serif:"Fraunces",Georgia,serif;--sans:"Montserrat",system-ui,sans-serif;
+}
+*{box-sizing:border-box;min-width:0}
+html{font-size:calc(112.5% * var(--scale));scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:clip}
+a{color:var(--maroon);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0 0 .6em;color:var(--maroon);text-wrap:balance;font-weight:400;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-weight:400}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:66ch}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.narrow{max-width:760px}
+section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+.eyebrow{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;color:var(--teal);display:block;margin-bottom:.7rem}
+.accent{color:var(--stain);font-style:italic}
+.skip{position:absolute;left:-999px;top:0;background:var(--maroon);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* ✎ fill-in prompts: replace each one with your real content */
+.prompt{border:2px dashed rgba(107,45,31,.35);border-radius:14px;padding:1rem 1.2rem;background:rgba(255,255,255,.55);color:var(--ink-soft);font-style:italic;margin:0 0 1.2rem;max-width:66ch}
+.prompt::before{content:"✎ Write: ";font-style:normal;font-weight:700;color:var(--maroon)}
+.prompt-note{background:var(--gold);color:var(--black);font-weight:700;text-align:center;padding:.55rem 1rem;font-size:.9rem}
+
+/* header */
+.site-header{border-bottom:0;background:transparent}
+.header-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.8rem 0}
+.site-nav{position:relative;display:flex;align-items:center;gap:.1rem;margin-left:auto;padding:.28rem;background:rgba(235,223,204,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(74,44,23,.1);border-radius:999px;box-shadow:0 8px 24px -16px rgba(74,44,23,.35)}
+.site-nav a{position:relative;z-index:1;text-decoration:none;color:var(--ink);font-size:.84rem;letter-spacing:.02em;padding:.42rem .85rem;border-radius:999px;transition:color .3s,background .3s;white-space:nowrap}
+.site-nav a:hover,.site-nav a.active{color:var(--deep,var(--maroon))}
+.nav-chip{position:absolute;z-index:0;top:.28rem;bottom:.28rem;left:0;width:0;border-radius:999px;background:var(--offwhite,var(--cream));box-shadow:0 3px 10px -5px rgba(74,44,23,.4);opacity:0;
+  transition:left .45s cubic-bezier(.3,1.25,.4,1),width .45s cubic-bezier(.3,1.25,.4,1),opacity .3s}
+.nav-chip::after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--gold)}
+.site-nav a.cta{background:var(--deep,var(--maroon));color:var(--offwhite,var(--cream));margin-left:.3rem;padding:.42rem 1rem}
+.site-nav a.cta:hover{background:var(--black,#140E0A)}
+.tools{display:flex;gap:.3rem} /* fallback only: ui.js moves these into the Aa options under the header */
+.tools button{font:inherit;font-size:.78rem;background:transparent;color:var(--ink-soft);border:1px solid rgba(74,44,23,.22);border-radius:999px;padding:.3rem .7rem;cursor:pointer;min-height:34px}
+@media (max-width:860px){
+  .site-header{position:relative}
+  .header-inner{gap:.9rem}
+  .site-nav{order:3;width:100%;margin-left:0;margin-right:0;justify-content:space-between}
+  .site-nav{overflow-x:auto;scrollbar-width:none}
+  .site-nav a{padding:.5rem .65rem;font-size:.85rem}
+  .site-nav a.cta{padding:.5rem .9rem}
+}
+
+/* sticky chapter bar */
+.chapters{position:sticky;top:0;z-index:40;background:rgba(245,237,226,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(107,45,31,.12)}
+.chapters .wrap{display:flex;gap:.4rem 1.2rem;align-items:center;flex-wrap:wrap;padding:.6rem 0}
+.chapters a{text-decoration:none;font-weight:700;color:var(--ink-soft);padding:.35rem .2rem;border-bottom:3px solid transparent;font-size:.95rem}
+.chapters a.active{color:var(--maroon);border-color:var(--stain)}
+.chapters .back{margin-right:auto;color:var(--maroon)}
+@media (max-width:640px){
+  .chapters .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:1rem}
+  .chapters a{white-space:nowrap;flex:none;font-size:.88rem}
+  .chapters .back{margin-right:0}
+}
+#progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--stain)}
+
+
+/* henna lines */
+.henna path,.henna circle.line{fill:none;stroke:var(--stain);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s ease}
+.is-drawn .draw{stroke-dashoffset:0}
+.stop-dot{fill:var(--stain);opacity:0;transition:opacity .6s ease}
+.is-drawn .stop-dot{opacity:1}
+
+/* hero */
+.hero{padding-top:clamp(2rem,5vw,4rem)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.status{display:inline-flex;gap:.45rem;align-items:center;background:#fff;border:1px solid rgba(107,45,31,.2);padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:1rem}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--gold);display:inline-block}
+.lede{font-size:1.2rem;color:var(--ink-soft)}
+.scene{border-radius:var(--radius);overflow:hidden;background:var(--sky);aspect-ratio:3/2}
+.scene svg{width:100%;height:100%;display:block}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2.5rem;padding:1.4rem 0;border-top:1px solid rgba(107,45,31,.18);border-bottom:1px solid rgba(107,45,31,.18)}
+.meta dt{font-weight:700;color:var(--teal);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.meta dd{margin:.2rem 0 0}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}}
+
+/* TL;DR */
+.tldr{background:#fff;border-radius:var(--radius);padding:clamp(1.4rem,3vw,2.2rem);border:1px solid rgba(107,45,31,.12);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
+.tldr h3{font-size:1.05rem;margin-bottom:.3rem}
+.tldr p{font-size:.95rem;margin:0}
+@media (max-width:860px){.tldr{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tldr{grid-template-columns:1fr}}
+
+/* chapter title cards */
+.chapter-card{background:var(--maroon);color:var(--cream);text-align:center;padding:clamp(5rem,12vw,8.5rem) 0}
+.chapter-card .eyebrow{color:var(--gold)}
+.chapter-card h2{color:var(--cream);font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:.3rem}
+.chapter-card p{margin:0 auto;color:#F3E3D2;font-size:1.1rem}
+.chapter-card svg{width:90px;height:90px;margin-bottom:1rem}
+.chapter-card .henna path{stroke:var(--gold)}
+
+/* blocks */
+.block{margin-top:4.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin-top:1.2rem}
+.card{background:#fff;border-radius:18px;padding:1.4rem;border:1px solid rgba(107,45,31,.12)}
+.card .prompt{margin:0;font-size:.95rem}
+.card h3{font-size:1.1rem}
+.insight{border-top:5px solid var(--stain)}
+.insight .num{font-family:var(--serif);font-size:2rem;color:var(--stain);font-weight:700;line-height:1}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+.decision{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.5rem;padding:1.6rem 0;border-top:1px solid rgba(107,45,31,.15)}
+.decision h3{font-size:1.15rem;margin:0}
+@media (max-width:640px){.decision{grid-template-columns:1fr;gap:.5rem}}
+
+/* before/after slider */
+.compare{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#fff;border:1px solid rgba(107,45,31,.15);margin-top:1.2rem;--pos:50%}
+.compare svg{position:absolute;inset:0;width:100%;height:100%}
+.compare .after{clip-path:inset(0 0 0 var(--pos))}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--maroon);transform:translateX(-50%);pointer-events:none}
+.compare .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--maroon);color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem}
+.compare .tag{position:absolute;top:.8rem;background:rgba(59,31,23,.85);color:#fff;font-size:.8rem;font-weight:700;padding:.2rem .7rem;border-radius:999px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare-caption{overflow-wrap:anywhere;font-size:.9rem;color:var(--ink-soft);margin-top:.6rem}
+
+/* swatches */
+.swatches{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.swatch{width:110px}
+.swatch span{display:block;height:80px;border-radius:14px;border:2px dashed rgba(107,45,31,.3);background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(107,45,31,.06) 8px 16px)}
+.swatch small{display:block;margin-top:.35rem;color:var(--ink-soft)}
+
+/* a11y checklist */
+.checks{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.7rem}
+.checks li{background:#fff;border-radius:14px;padding:.9rem 1.1rem;border:1px solid rgba(107,45,31,.12);display:flex;gap:.8rem}
+.checks li b{color:var(--teal)}
+
+/* reflection */
+.reflect{background:var(--paper)}
+.quote{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:var(--maroon);font-style:italic;line-height:1.3;border-left:4px solid var(--stain);padding-left:1.2rem;margin:2rem 0}
+
+/* next project */
+.next{display:block;text-decoration:none;background:var(--maroon);color:var(--cream);border-radius:var(--radius);padding:clamp(2rem,5vw,3.5rem);transition:transform .3s}
+.next:hover{transform:translateY(-4px)}
+.next .eyebrow{color:var(--gold)}
+.next h2{color:var(--cream);margin:0}
+footer{padding:2rem 0 3rem;color:var(--ink-soft);font-size:.92rem}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+body.reduce-motion *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+body.reduce-motion .draw{stroke-dashoffset:0}
+body.reduce-motion .stop-dot,body.reduce-motion .reveal{opacity:1;transform:none}
+/* L'Oréal case study extras */
+.btn-live{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;padding:.8rem 1.3rem;border-radius:999px;background:var(--maroon);color:var(--cream);text-decoration:none;font-weight:700;min-height:48px}
+.btn-live:hover{background:var(--teal)}
+.btn-live.ghost{background:transparent;color:var(--maroon);border:1px solid var(--maroon);margin-left:.5rem}
+.scene.app{background:#F7F1EA}
+.flow{list-style:none;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;counter-reset:f}
+.flow li{position:relative;background:#fff;border-radius:16px;padding:1.3rem 1.2rem;border:1px solid rgba(74,44,23,.12);counter-increment:f}
+.flow li::before{content:counter(f,decimal-leading-zero);display:block;font-family:var(--serif);font-size:1.6rem;color:var(--gold);margin-bottom:.4rem}
+.flow h3{margin:0 0 .3rem;font-size:1.05rem}
+.flow p{margin:0;font-size:.95rem}
+.langs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.langs span{padding:.45rem .9rem;border-radius:999px;background:#fff;border:1px solid rgba(74,44,23,.15);font-weight:700}
+.langs span[dir=rtl]{font-family:system-ui,sans-serif}
+.cats{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.cats span{font-size:.85rem;padding:.3rem .7rem;border-radius:8px;background:rgba(185,137,63,.14)}
+.hero h1{font-size:clamp(2.3rem,4.4vw,3.6rem)}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.flow{grid-template-columns:1fr}.btn-live.ghost{margin-left:0}}
+/* responsive: small phones and very large screens */
+@media (max-width:380px){
+  .site-nav a{padding:.45rem .5rem !important;font-size:.78rem !important;letter-spacing:0}
+  .site-nav a.cta{padding:.45rem .7rem !important}
+}
+@media (min-width:1800px){html{font-size:calc(125% * var(--scale))}.wrap,.hero-inner{width:min(1480px,84vw) !important}}
+@media (min-width:2400px){html{font-size:calc(150% * var(--scale))}.wrap,.hero-inner{width:min(1900px,82vw) !important}}
+.site-nav a.nav-cv{display:inline-flex;align-items:center;gap:.3rem}
+.site-nav a.nav-cv svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hdr-cv{display:none}
+@media (max-width:480px){
+  .site-nav a.nav-cv{display:none}
+  .hdr-cv{display:inline-flex;order:1;margin-left:auto;align-items:center;gap:.35rem;height:40px;padding:0 .9rem;border-radius:999px;border:1px solid rgba(74,44,23,.2);
+    color:var(--ink);text-decoration:none;font-size:.82rem;background:rgba(250,244,235,.6)}
+  .hdr-cv svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .display-toggle{order:2;margin-left:.45rem !important}
+  .header-inner{column-gap:.5rem !important}
+  .logo[data-signature] svg{width:140px !important}
+}
+@media (max-width:370px){.hdr-cv{width:40px;padding:0;justify-content:center}.hdr-cv .t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+/* Ascend extras */
+.shots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;margin-top:2.5rem;align-items:end}
+.shots img,.gallery img,.wide img,.figs img{width:100%;height:auto;display:block;border-radius:16px;background:var(--paper)}
+.shots figure,.gallery figure,.figs figure{margin:0}
+.shots figcaption,.gallery figcaption,.figs figcaption,.wide figcaption{margin-top:.5rem;font-size:.82rem;color:var(--ink-soft);text-align:center}
+
+.wide{margin:2rem 0 0}
+.wide img{box-shadow:0 24px 50px -32px rgba(74,44,23,.5)}
+.wide.phone{max-width:300px;margin-inline:auto}
+.phones{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;margin-top:1.6rem}
+.phones figure{margin:0;flex:0 1 190px}
+.phones img{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 20px 40px -28px rgba(74,44,23,.6)}
+@media (max-width:520px){.phones figure{flex-basis:calc(50% - .6rem)}}
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.4rem}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem;margin-top:1.6rem}
+.big-stat{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin:1.2rem 0 0}
+.big-stat b{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8vw,5rem);line-height:1;color:var(--maroon)}
+.big-stat span{color:var(--ink-soft);max-width:22ch}
+.iter{width:100%;border-collapse:collapse;margin-top:1.4rem;font-size:.95rem}
+.iter th,.iter td{text-align:left;vertical-align:top;padding:.9rem .8rem;border-bottom:1px solid rgba(107,45,31,.15)}
+.iter th{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.iter td:first-child{font-weight:700;color:var(--maroon);white-space:nowrap}
+.pill-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;padding:0;list-style:none}
+.pill-list li{padding:.4rem .9rem;border-radius:999px;background:#fff;border:1px solid rgba(107,45,31,.15);font-size:.9rem}
+.mvp{counter-reset:m;list-style:none;padding:0;margin:1.2rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.mvp li{counter-increment:m;background:#fff;border-radius:18px;padding:1.2rem 1.3rem;border:1px solid rgba(107,45,31,.12)}
+.mvp li::before{content:"0" counter(m);display:block;font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold)}
+.hmw{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35;color:var(--maroon);margin:1.2rem 0 0;padding:1.4rem 1.6rem;background:#fff;border-radius:18px;border-left:4px solid var(--gold)}
+.reframe{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin-top:1.2rem}
+.reframe p{margin:0;padding:1.1rem 1.3rem;border-radius:16px;background:#fff;border:1px solid rgba(107,45,31,.12)}
+.reframe p:first-child{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(107,45,31,.35)}
+.reframe p:last-child{border-color:var(--gold);color:var(--maroon);font-weight:600}
+.reframe span{font-size:1.4rem;color:var(--gold)}
+@media (max-width:860px){.shots{grid-template-columns:repeat(3,minmax(0,1fr))}.shots figure:nth-child(n+4){display:none}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.figs,.mvp{grid-template-columns:1fr}.reframe{grid-template-columns:1fr}.reframe span{transform:rotate(90deg);justify-self:center}}
+@media (max-width:520px){.iter td:first-child{white-space:normal}.iter{font-size:.82rem;table-layout:fixed}.iter th,.iter td{padding:.7rem .45rem;overflow-wrap:anywhere}.iter th:first-child{width:24%}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- Delete this yellow bar once every ✎ prompt is replaced -->
+
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Farha Sajid, home" data-signature data-delay="300"></a><!-- EDIT: name lives in signature.js -->
+    <nav class="site-nav" aria-label="Main">
+      <a class="active" href="index.html#work">Work</a>
+      <a href="index.html#story">Story</a>
+      <a class="nav-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+      <a class="cta" href="index.html#contact">Chai &amp; chat?</a>
+    </nav>
+    <a class="hdr-cv" href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></svg><span class="t">Résumé</span></a>
+    <div class="tools" role="group" aria-label="Display settings">
+      <button id="text-down" aria-label="Make text smaller">A−</button>
+      <button id="text-up" aria-label="Make text larger">A+</button>
+      <button id="motion-toggle" aria-pressed="false">Reduce motion</button>
+    </div>
+  </div>
+</header>
+
+<nav class="chapters" aria-label="Case study chapters">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← All work</a>
+    <a href="#overview">Overview</a>
+    <a href="#paste">1 · Mixing the paste</a>
+    <a href="#apply">2 · Applying the design</a>
+    <a href="#stain">3 · Letting it develop</a>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</nav>
+
+<main id="main">
+  <!-- Images load from Framer for now. To keep them safe, download each one into an images/ folder and swap the src. -->
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="overview" data-next="Overview">
+    <div class="wrap">
+      <span class="status"><i></i> High-fidelity prototype</span>
+      <span class="eyebrow">Case study · Mobile app</span>
+      <h1>Ascend</h1>
+      <p class="lede">Turning college uncertainty into a clear path forward for first-generation students.</p>
+      <a class="btn-live" href="https://www.figma.com/proto/A0odfhPk8R1t3pvb08u6Vb/Untitled?node-id=75-232&amp;viewport=2104%2C3583%2C0.23&amp;t=ibcEDAoePDgz64cM-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=75%3A232&amp;page-id=0%3A1&amp;show-proto-sidebar=1" target="_blank" rel="noopener">View the prototype <span aria-hidden="true">↗</span></a>
+      <div class="shots">
+        <figure><img src="https://framerusercontent.com/images/tsPDsbBcCAq4IEBqTpyhse9IKiM.png" alt="Ascend onboarding screen: Start your journey" loading="lazy"><figcaption>Onboarding</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/qxL6O1izYge1vSERNR8CUzEbMkE.png" alt="Ascend home dashboard with personalized next steps" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/t49A2aqLuubynRBpiHZyNuBKB3o.png" alt="College overview screen: Find your fit" loading="lazy"><figcaption>College overview</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/j3COtbKo7gNgh9V2NEEsrIAAtiI.png" alt="Guided roadmap screen showing milestones" loading="lazy"><figcaption>Guided roadmap</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/mOikNovdFLIqkjRITa9f5ziGQw.png" alt="Financial guidance screen" loading="lazy"><figcaption>Financial guidance</figcaption></figure>
+      </div>
+      <dl class="meta">
+        <div><dt>My role</dt><dd>Sole UX/UI designer</dd></div>
+        <div><dt>Timeline</dt><dd>July – October 2026</dd></div>
+        <div><dt>Tools</dt><dd>Figma</dd></div>
+        <div><dt>Deliverable</dt><dd>High-fidelity mobile prototype</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== TL;DR ===================== -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">The short version</span>
+      <div class="tldr reveal">
+        <div><h3>The problem</h3><p>First-generation students need clear, accessible guidance to make informed decisions and finish each step of the college process with confidence.</p></div>
+        <div><h3>My role</h3><p>Research, UX strategy, information architecture, wireframing, prototyping, usability testing, visual design and accessibility.</p></div>
+        <div><h3>The approach</h3><p>A guided experience that shows students what matters to them and what to do next, instead of more information.</p></div>
+        <div><h3>The outcome</h3><p>Task completion rose from 60% to 100% across core flows after two rounds of testing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 1 ===================== -->
+  <div class="chapter-card" id="paste" data-next="Chapter 1 · Mixing the paste">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M10 30 Q35 70 60 30 M8 30 H62 M24 22 Q28 14 24 6 M35 22 Q39 14 35 6 M46 22 Q50 14 46 6"/></svg>
+      <span class="eyebrow">Chapter 1 · Research</span>
+      <h2>Mixing the paste</h2>
+      <p>Understanding the students before designing anything.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="block" style="margin-top:0">
+        <h2>Background</h2>
+        <p>College information is scattered across college websites, FAFSA, scholarship pages, application portals and deadlines. Ascend brings exploration, financial aid, deadlines and step-by-step roadmaps into one place.</p>
+      </div>
+      <figure class="wide"><img src="https://framerusercontent.com/images/NNkrc31oBXXvVHhpo0ue97odxnQ.png" alt="Illustration of the scattered college information landscape" loading="lazy"></figure>
+
+      <div class="block">
+        <h2>How I researched</h2>
+        <p>I interviewed <b>five first-generation high school seniors from immigrant families</b> about applications, financial aid, family expectations and how prepared they felt. Then I grouped what I heard with affinity mapping, and compared four major college-planning and financial-aid platforms.</p>
+        <ul class="pill-list"><li>Financial uncertainty</li><li>Guidance &amp; preparation</li><li>Emotional pressure</li><li>Timing &amp; responsibilities</li></ul>
+      </div>
+
+      <div class="block">
+        <h2>The assumption I got wrong</h2>
+        <p>I expected a lack of family support to be the biggest barrier. It wasn't. Families were supportive, but often unfamiliar with the U.S. college system. That changed the question I was designing for:</p>
+        <div class="reframe"><p>How can I give students more college information?</p><span aria-hidden="true">→</span><p>How can I help students understand what matters to them, and know what to do next?</p></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="block">
+        <h2>Competitive analysis</h2>
+        <div class="figs">
+          <figure><img src="https://framerusercontent.com/images/oPguQXjG6tLmTNetqN3jC8jm8.png" alt="Competitive analysis of a college-planning platform" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/1XAQHeGmCCEwYnaQQzblrOmZRQ.png" alt="Competitive analysis of a financial-aid platform" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/ZX7Uxex92kcP7KCp0EfTYGwCZg.png" alt="Competitive analysis summary" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>Meet Sara</h2>
+        <p>Sara is the first in her family to apply to college. She represents the goals, needs and circumstances of the students I interviewed.</p>
+        <figure class="wide"><img src="https://framerusercontent.com/images/4NiOEzFw8ce8HCJRrnlM1SHKGv4.png" alt="Persona: Sara, a first-generation college applicant" loading="lazy"></figure>
+        <p class="hmw">How might we turn an overwhelming college process into clear, manageable next steps for first-generation students?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 2 ===================== -->
+  <div class="chapter-card" id="apply" data-next="Chapter 2 · Applying the design">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M48 8 L62 22 L22 58 L10 60 L12 48 Z M18 52 Q30 40 26 30 Q22 20 34 16"/></svg>
+      <span class="eyebrow">Chapter 2 · Ideation &amp; design</span>
+      <h2>Applying the design</h2>
+      <p>From paper sketches to a clear, guided flow.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>From sketch to prototype</h2>
+      <p>I started with paper sketches of personalization and homepage layouts, moved to digital wireframes, then connected a low-fidelity prototype to test the full journey from onboarding to action.</p>
+      <div class="block">
+        <h2>Three core experiences</h2>
+        <ol class="mvp"><li><h3>College search &amp; save</h3><p>Explore colleges that fit and keep track of favorites.</p></li><li><h3>Financial aid &amp; opportunities</h3><p>FAFSA, scholarships and aid explained in plain language.</p></li><li><h3>Roadmap &amp; progress</h3><p>Step-by-step milestones, so students always know what's next.</p></li></ol>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="wide" style="max-width:900px;margin-inline:auto"><img src="https://framerusercontent.com/images/YYJnLEbaA375Dt6jdjZ5ggOdTeE.png" alt="User flow from personalized onboarding to the central dashboard" loading="lazy"><figcaption>Personalized onboarding leads to one dashboard that connects exploration, aid and the roadmap.</figcaption></figure>
+    </div>
+    <div class="wrap narrow">
+      <div class="block">
+        <h2>Design system</h2>
+        <div class="decision reveal"><h3>Logo &amp; color</h3><div><p>An upward mark signals progress. Deep navy builds trust, while orange, yellow, cream and light blue add warmth and highlight actions and states.</p></div></div>
+        <div class="decision reveal"><h3>Typography</h3><div><p>Charis SIL for brand personality, Roboto for readable interface text.</p></div></div>
+        <div class="decision reveal"><h3>Navigation</h3><div><p>Four tabs: Home, Colleges, Financial Aid and Profile.</p></div></div>
+        <div class="decision reveal"><h3>Feedback</h3><div><p>Checkmarks, completion indicators, selected states and progress trackers, so students can see how far they've come.</p></div></div>
+      </div>
+      <div class="block">
+        <h2>Designed for every student</h2>
+        <ul class="checks">
+          <li><b>Aa</b><span>Clear visual hierarchy, so the most important task stands out.</span></li>
+          <li><b>◐</b><span>Meaning never relies on color alone: icons, labels and text carry it too.</span></li>
+          <li><b>👆</b><span>Large touch targets with clear spacing.</span></li>
+        </ul>
+        <figure class="wide phone"><img src="https://framerusercontent.com/images/It1mcj3CbkPUg9AsUl41QKYPo.png" alt="Accessible screen design with clear hierarchy and large touch targets" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="block">
+        <h2>Final screens</h2>
+        <div class="phones">
+          <figure><img src="https://framerusercontent.com/images/8RC3FCqIyWfG9ZQKhaupWMYfWFo.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/Blhb4TUJoPJbIcOEhbh0tyeXmBU.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/TqCsPuoauqM6uGBFJQ3PTdQFZoA.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/H55PucdTnwhcdbrL9dTL0bjZKVA.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/GSNlrixcrTt4ZwrbLb4BHUHag.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/ppZHgwr74e4YcCoAIogBEu50NxM.png" alt="Ascend app screen" loading="lazy"></figure>
+          <figure><img src="https://framerusercontent.com/images/SI8fkqTrcXq6jk1Pl3gKtD1do.png" alt="Ascend app screen" loading="lazy"></figure>
+        </div>
+        <figure class="wide"><img src="https://framerusercontent.com/images/8JduKrTnfDQ1KACM5Vo0t6fADQ.png" alt="Ascend screens in context" loading="lazy"></figure>
+        <figure class="wide"><img src="https://framerusercontent.com/images/OUxuRnzyx5WmEQdcs3z1K47d2aA.png" alt="Ascend design overview" loading="lazy"></figure>
+        <figure class="wide"><img src="https://framerusercontent.com/images/eE8ZDSXL88n0roogKQdswzIMEdo.png" alt="Ascend design system components" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 3 ===================== -->
+  <div class="chapter-card" id="stain" data-next="Chapter 3 · Letting it develop">
+    <div class="wrap">
+      <svg viewBox="0 0 70 70" class="henna" aria-hidden="true"><path d="M35 8 C50 28 56 38 56 46 A21 21 0 0 1 14 46 C14 38 20 28 35 8 Z M26 46 A9 9 0 0 0 35 55"/></svg>
+      <span class="eyebrow">Chapter 3 · Test &amp; outcome</span>
+      <h2>Letting the stain develop</h2>
+      <p>Two rounds of testing, and the changes that came from them.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>Testing &amp; iterations</h2>
+      <p>Two rounds of usability testing with five participants covered onboarding, homepage navigation, saving a college, exploring aid and finding next steps.</p>
+      <table class="iter">
+        <thead><tr><th>Area</th><th>What I found</th><th>What I changed</th></tr></thead>
+        <tbody>
+          <tr><td>Homepage</td><td>2 of 5 found it overwhelming</td><td>Simplified the layout and strengthened hierarchy for priority tasks</td></tr>
+          <tr><td>Roadmap</td><td>4 of 5 couldn't tell completed, current and upcoming milestones apart</td><td>Redesigned progress states and milestone indicators</td></tr>
+          <tr><td>Financial aid</td><td>3 of 5 needed more context on FAFSA requirements</td><td>Added explanations and clearer links between learning and action</td></tr>
+          <tr><td>Interactions</td><td>Buttons and icons didn't show where they led</td><td>Refined labels, button hierarchy and interaction cues</td></tr>
+        </tbody>
+      </table>
+      <figure class="wide phone"><img src="https://framerusercontent.com/images/Jnj17VBqL872EdNju86fh5E0tA.png" alt="A redesigned screen after usability testing" loading="lazy"></figure>
+
+      <div class="block">
+        <h2>The result</h2>
+        <div class="big-stat"><b>60% → 100%</b><span>task completion across core flows</span></div>
+        <p class="hmw" style="margin-top:1.6rem">"I like how it gives me options before I can even think about what to do next."<br><small style="font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--ink-soft)">Test participant</small></p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="phones" style="margin-top:2.4rem">
+        <figure><img src="https://framerusercontent.com/images/AmZehCG0BFIzdI6QXQ2enDdoUjc.png" alt="Final Ascend screen" loading="lazy"></figure>
+        <figure><img src="https://framerusercontent.com/images/F41Fl8SPKVFgDuSicV9KcHcdP1w.png" alt="Final Ascend screen" loading="lazy"></figure>
+        <figure><img src="https://framerusercontent.com/images/92cHlp0CxKeLcmwqLmWJQZlKuh0.png" alt="Final Ascend screen" loading="lazy"></figure>
+        <figure><img src="https://framerusercontent.com/images/dPC0vsHaGb3Z0v2m7ShjnEHSVEM.png" alt="Final Ascend screen" loading="lazy"></figure>
+        <figure><img src="https://framerusercontent.com/images/CUCDvhMuiEEk0xWafJP8VuCZNg.png" alt="Final Ascend screen" loading="lazy"></figure>
+      </div>
+      <p style="text-align:center;margin-top:2rem"><a class="btn-live" href="https://www.figma.com/proto/A0odfhPk8R1t3pvb08u6Vb/Untitled?node-id=75-232&amp;viewport=2104%2C3583%2C0.23&amp;t=ibcEDAoePDgz64cM-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=75%3A232&amp;page-id=0%3A1&amp;show-proto-sidebar=1" target="_blank" rel="noopener">Try the prototype <span aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+
+  <section class="reflect" data-next="What I learned">
+    <div class="wrap narrow">
+      <span class="eyebrow">Reflection</span>
+      <h2>What I learned</h2>
+      <p class="quote">The best experience gives the right information at the right moment, not more information.</p>
+      <p>Design around what users actually need instead of adding features, and challenge your own assumptions. Mine about family support turned out to be wrong, and the product got better because of it.</p>
+      <p><b>Next steps:</b> test with a broader group of first-generation students, add college comparisons and personalized aid guidance, and keep testing accessibility.</p>
+    </div>
+  </section>
+
+  <section data-next="Next project">
+    <div class="wrap">
+      <a class="next" data-cursor="Next" href="loreal.html">
+        <span class="eyebrow">Next project →</span>
+        <h2>L'Oréal Beauty Assistant</h2>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Farha Sajid · <a href="index.html">Back to home</a> · <a href="https://github.com/fasajid" target="_blank" rel="noopener">GitHub ↗</a> · <span>Designed &amp; coded by me in HTML, CSS and JavaScript</span></div>
+</footer>
+
+<script>
+{
+  const root = document.documentElement, body = document.body;
+  const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+
+  // text size + motion (shared with the homepage)
+  let scale = parseFloat(store.get("scale")) || 1;
+  const applyScale = () => root.style.setProperty("--scale", scale);
+  applyScale();
+  document.getElementById("text-up").onclick = () => { scale = Math.min(1.5, +(scale + .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  document.getElementById("text-down").onclick = () => { scale = Math.max(.9, +(scale - .1).toFixed(2)); applyScale(); store.set("scale", scale); };
+  const motionBtn = document.getElementById("motion-toggle");
+  const setMotion = r => { body.classList.toggle("reduce-motion", r); motionBtn.setAttribute("aria-pressed", r); store.set("reduce", r ? "1" : "0"); };
+  const saved = store.get("reduce");
+  setMotion(saved === null ? matchMedia("(prefers-reduced-motion: reduce)").matches : saved === "1");
+  motionBtn.onclick = () => setMotion(!body.classList.contains("reduce-motion"));
+
+
+  // draw the hero path
+  const scn = document.getElementById("scene"); if (scn) requestAnimationFrame(() => setTimeout(() => scn.classList.add("is-drawn"), 150));
+
+  // reveal on scroll
+  const revealObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); revealObs.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+
+  // stain color + progress bar
+  const fresh = [154,94,40], deep = [74,44,23], bar = document.getElementById("progress");
+  let ticking = false;
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    root.style.setProperty("--stain", `rgb(${fresh.map((v,i) => Math.round(v + (deep[i]-v)*p)).join(",")})`);
+    bar.style.width = (p*100) + "%";
+    ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // highlight the current chapter
+  const links = [...document.querySelectorAll(".chapters a[href^='#']")];
+  const chapterObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  ["overview","paste","apply","stain"].forEach(id => chapterObs.observe(document.getElementById(id)));
+
+  // before/after slider
+  const cmp = document.getElementById("compare");
+  if (cmp) cmp.querySelector("input").addEventListener("input", e => cmp.style.setProperty("--pos", e.target.value + "%"));
+}
+</script>
+<script src="signature.js" defer></script>
+<script src="ui.js" defer></script>
+<script src="progress.js" defer></script>
+<script src="cursor.js" defer></script>
+</body>
+</html>
